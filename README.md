@@ -48,6 +48,10 @@ views 项目页面
 
 ### 项目启动
 
+复制.env 文件为.env.development.local 文件,并修改其中的环境变量
+
+复制.env 文件为.env.production.local 文件,并修改其中的环境变量
+
 安装依赖
 
 ```bash
