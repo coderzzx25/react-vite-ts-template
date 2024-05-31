@@ -30,8 +30,6 @@
 
 assets 静态文件资源
 
-base-ui 二次封装 ui 框架组件
-
 components 通用组件
 
 hooks 封装的 hooks
