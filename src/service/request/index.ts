@@ -1,6 +1,6 @@
-import axios from "axios";
-import type { AxiosInstance } from "axios";
-import type { RequestConfig } from "./type";
+import axios from 'axios';
+import type { AxiosInstance } from 'axios';
+import type { RequestConfig } from './type';
 
 class Request {
   instance: AxiosInstance;
@@ -63,16 +63,16 @@ class Request {
   }
 
   get<T = any>(config: RequestConfig<T>) {
-    return this.request({ ...config, method: "GET" });
+    return this.request({ ...config, method: 'GET' });
   }
   post<T = any>(config: RequestConfig<T>) {
-    return this.request({ ...config, method: "POST" });
+    return this.request({ ...config, method: 'POST' });
   }
   delete<T = any>(config: RequestConfig<T>) {
-    return this.request({ ...config, method: "DELETE" });
+    return this.request({ ...config, method: 'DELETE' });
   }
   patch<T = any>(config: RequestConfig<T>) {
-    return this.request({ ...config, method: "PATCH" });
+    return this.request({ ...config, method: 'PATCH' });
   }
 }
 

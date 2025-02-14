@@ -10,13 +10,13 @@ const request = new Request({
       return config;
     },
     requestFailureFn: (error) => {
-      return error;
+      return Promise.reject(error);
     },
     responseSuccessFn: (response) => {
       return response.data;
     },
     responseFailureFn: (error) => {
-      console.log(error.response?.data as string)
+      return Promise.reject(error.message || error.response?.data);
     }
   }
 });
