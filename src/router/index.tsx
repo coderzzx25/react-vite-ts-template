@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { RouteObject, Navigate } from 'react-router-dom';
+import { RouteObject, Navigate, createBrowserRouter } from 'react-router-dom';
 
 const Main = lazy(() => import('@/views/main/main'));
 const NotFound = lazy(() => import('@/views/notfound/notfound'));
@@ -19,4 +19,6 @@ const routes: RouteObject[] = [
   }
 ];
 
-export default routes;
+const router = createBrowserRouter(routes);
+
+export default router;

@@ -1,15 +1,23 @@
-import { memo } from 'react';
+import { memo, Suspense } from 'react';
 import type { FC, ReactNode } from 'react';
-import { useRoutes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
 
-import routes from '@/router';
+import router from '@/router';
+import store from './store';
 
 interface IProps {
   children?: ReactNode;
 }
 
 const App: FC<IProps> = () => {
-  return <div>{useRoutes(routes)}</div>;
+  return (
+    <Provider store={store}>
+      <Suspense fallback="loading...">
+        <RouterProvider router={router} />
+      </Suspense>
+    </Provider>
+  );
 };
 
 export default memo(App);
