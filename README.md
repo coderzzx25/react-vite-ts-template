@@ -18,8 +18,7 @@
 
 ### 样式解决方案
 
-1. normalize.css 8.0.1
-2. styled-components 6.1.1
+1. tailwindcss 3.4.17
 
 ### 代码规范
 
