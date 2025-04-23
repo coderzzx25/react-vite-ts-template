@@ -18,7 +18,7 @@
 
 ### 样式解决方案
 
-1. tailwindcss 3.4.17
+1. tailwindcss 4.1.4
 
 ### 代码规范
 
