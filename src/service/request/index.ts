@@ -38,28 +38,28 @@ class Request {
     );
   }
 
-  request<T = any>(config: RequestConfig<T>): Promise<T> {
+  request<T = unknown>(config: RequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       this.instance
-        .request<any, T>(config)
+        .request<unknown, T>(config)
         .then((res) => resolve(res))
         .catch((err) => reject(err));
     });
   }
 
-  get<T = any>(config: RequestConfig<T>): Promise<T> {
+  get<T>(config: RequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'GET' });
   }
 
-  post<T = any>(config: RequestConfig<T>): Promise<T> {
+  post<T>(config: RequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'POST' });
   }
 
-  delete<T = any>(config: RequestConfig<T>): Promise<T> {
+  delete<T>(config: RequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'DELETE' });
   }
 
-  patch<T = any>(config: RequestConfig<T>): Promise<T> {
+  patch<T>(config: RequestConfig<T>): Promise<T> {
     return this.request({ ...config, method: 'PATCH' });
   }
 }
