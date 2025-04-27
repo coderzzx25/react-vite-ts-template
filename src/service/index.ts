@@ -1,6 +1,12 @@
 import { BASE_URL, TIME_OUT } from './config';
 import Request from './request';
 
+// 后端返回的错误对象
+interface IResponseError {
+  statusCode: string;
+  message: string;
+}
+
 // 统一的请求对象
 const request = new Request({
   baseURL: BASE_URL,
@@ -16,7 +22,17 @@ const request = new Request({
       return response.data;
     },
     responseFailureFn: (error) => {
-      return Promise.reject(error.message || error.response?.data);
+      if (error.code === 'NETWORK_ERROR') {
+        return Promise.reject(new Error('服务器错误'));
+      }
+
+      if (error.response) {
+        const responseError = error.response.data as IResponseError;
+
+        return Promise.reject(responseError.message);
+      }
+
+      return Promise.reject(new Error('未知错误'));
     }
   }
 });
