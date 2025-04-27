@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { RouteObject, Navigate, createBrowserRouter } from 'react-router-dom';
+import { RouteObject, Navigate, createBrowserRouter } from 'react-router';
 
 const Main = lazy(() => import('@/views/main/main'));
 const NotFound = lazy(() => import('@/views/notfound/notfound'));
